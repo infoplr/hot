@@ -8,7 +8,13 @@ window.addEventListener( "load", () => {
     var l = document.querySelectorAll( "l" ),
         home = document.querySelector( "#home" ),
         fab = document.querySelector( "fab" ),
+        hot = document.querySelectorAll( "hot" ),
+        mon = document.querySelectorAll( "mon" ),
+        div = document.querySelectorAll( ".div" ),
         fabCircle = document.querySelector( "circle" ),
+        btn_hotmart = document.querySelector( "#Hotmart" ),
+        btn_monetizze = document.querySelector( "#Monetizze" ),
+        btn_afiliada = document.querySelector( "#Afiliada" ),
         btn_d19d = document.querySelector( "#btn_d19d" ),
         drawer = document.querySelector( "drawer" ); 
 
@@ -51,6 +57,20 @@ window.addEventListener( "load", () => {
     btn_d19d.addEventListener( "click", ev => {
         home.innerHTML = d19d;
     } );
+
+    btn_afiliada.addEventListener( "click", ev => {
+        hot.forEach( h => h.style.display = "none" );
+        mon.forEach( m => m.style.display = "none" );
+        div.forEach( d => d.style.display = "block" );
+    } )
+    btn_hotmart.addEventListener( "click", ev => {
+        hot.forEach( h => h.style.display = "block" );
+        mon.forEach( m => m.style.display = "none" );
+    } )
+    btn_monetizze.addEventListener( "click", ev => {
+        hot.forEach( h => h.style.display = "none" );
+        mon.forEach( m => m.style.display = "block" );
+    } )
 
 
 

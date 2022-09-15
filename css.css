@@ -15,7 +15,7 @@ body {
     width: clamp( 100px, 90%, 980px );
     padding: 16px;
 }
-box {
+box, mon, hot {
     display: block;
     width: 100%; height: 100%;
     margin: 8px; padding: 16px;
@@ -24,7 +24,10 @@ box {
     border: #aaa1 .1px dashed;
     /* background: #1b1d22; */
     box-shadow: inset#0009 3px 4px 15px; 
-} .ativo { border: #fa0 2px dashed; }
+} .div { border: #fa0 2px dashed; }
+/* .div::after { content: src"./assets/visto.svg"; background-image: url(./assets/visto.svg); } */
+hot::before { content: "Hotmart"; color: #b67b22;  }
+mon::before { content: "Monetizze"; color: #27f; }
 drawer {
     display: flex; align-items: center;
     flex-direction: column;
@@ -42,7 +45,7 @@ drawer {
     width: 90%; height: 80%;
     box-shadow: inset#0008 0 0 13px;
 }
-:is( home,box ) > l { text-decoration: none; 
+:is( home,box,hot,mon ) > l { text-decoration: none; 
     color: #fff; background: #27f; 
     display: inline-block;
     box-shadow: #0001 -3px 4px 0; 
@@ -81,4 +84,13 @@ fab > circle {
     border-radius: 5rem;
     background: transparent;
     box-shadow: inset#0008 0px 0px 13px;
+}
+
+btn {
+    display: block;
+    margin: 8px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    background: #932;
+    cursor: pointer;
 }
